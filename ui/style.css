@@ -2,9 +2,10 @@ body {
     font-family: sans-serif;
     background-color: lightgrey;
     margin-top: 75px;
+    padding:200px;
 }
 
-.center {
+.lefft {
     text-align: center;
 }
 
