@@ -42,32 +42,37 @@ app.use(morgan('combined'));
             </p>`
       },
  };
- function createtemplate(data){
+ function createTemplate (data){
         var title=data.title;
         var heading=data.heading;
         var content=data.content;
-        var htmltemplate=`
+        var htmlTemplate=`
         <html>
             <head>
-                <title>${title}</title>
-        
+                <title>
+                   ${title}
+                </title>
+                </head>
                 <link href="/ui/style.css" rel="stylesheet" />
            
-                    </head>
+                    
             <body>
-                <h4>${heading}</h4>
+                <h4>
+                   ${heading}
+               </h4>
                 <a href="/">home</a>
                 <hr>
                 <div class="container">
                     <div>            
                     ${content}
-                </div></div>
+                     </div>
+                </div>
             </body>
         </html>
 
 `;
 
-return htmltemplate;
+return htmlTemplate;
 }
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -75,7 +80,7 @@ app.get('/', function (req, res) {
 app.get('/:article',function(req,res){
  
 var articlename=req.params.articlename;
-res.send(createtemplate(articles[articlename]));
+res.send(createTemplate(article));
 });
 
 
