@@ -4,12 +4,50 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
+ var article={
+     title:"article",
+     heading:"article one",
+    content:`<p>
+                this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.
+            </p>
+            <p>
+                this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.
+            </p><p>
+                this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.
+            </p>`
+ };
+function createtemplate(data){
+        var title=data.title;
+        var heading=data.heading;
+        var content=data.content;
+        var htmltemplate=`
+        <html>
+            <head>
+                <title>${title}</title>
+        
+                <link href="/ui/style.css" rel="stylesheet" />
+           
+                    </head>
+            <body>
+                <h4>${heading}</h4>
+                <a href="/">home</a>
+                <hr>
+                <div class="container">
+                    <div>            
+                    ${content}
+                </div></div>
+            </body>
+        </html>
 
+`;
+
+return htmltemplate;
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 app.get('/article',function(req,res){
- res.sendFile(path.join(__dirname, 'ui', 'article.html'));
+ res.send(createtemplate(article));
    
 });
 app.get('/a2',function(req,res){
