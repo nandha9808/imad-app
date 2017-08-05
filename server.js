@@ -4,7 +4,8 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
- var article={
+ var articles= {
+     article:{
      title:"article",
      heading:"article one",
     content:`<p>
@@ -15,8 +16,33 @@ app.use(morgan('combined'));
             </p><p>
                 this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.
             </p>`
+ },
+      a2:{
+           title:"article 2 | nandha",
+     heading:"article two",
+    content:`<p>
+                this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.
+            </p>
+            <p>
+                this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.
+            </p><p>
+                this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.
+            </p>`
+      },
+      a3:{
+           title:"article 3| nandha",
+     heading:"article three",
+    content:`<p>
+                this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.
+            </p>
+            <p>
+                this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.
+            </p><p>
+                this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.
+            </p>`
+      },
  };
-function createtemplate(data){
+ function createtemplate(data){
         var title=data.title;
         var heading=data.heading;
         var content=data.content;
@@ -46,18 +72,12 @@ return htmltemplate;
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/article',function(req,res){
- res.send(createtemplate(article));
-   
+app.get('/:article',function(req,res){
+ 
+var articlename=req.params.articlename;
+res.send(createtemplate(articles[articlename]));
 });
-app.get('/a2',function(req,res){
- res.sendFile(path.join(__dirname, 'ui', 'a2.html'));
-   
-});
-app.get('/a3',function(req,res){
- res.sendFile(path.join(__dirname, 'ui', 'a3.html'));
-   
-});
+
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
