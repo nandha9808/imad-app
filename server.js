@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
  var articles={
      'article':{
-     title:"article",
+     //title:"article",
      heading:"article one",
      content:`<p>
                 this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.
@@ -18,7 +18,7 @@ app.use(morgan('combined'));
             </p>`
  },
      'a2':{
-         title:"article",
+         //title:"article2",
      heading:"article two",
      content:`<p>
                 this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.
@@ -30,7 +30,7 @@ app.use(morgan('combined'));
             </p>`
      },
      'a3':{ 
-         title:"article",
+         //title:"article3",
      heading:"article three",
      content:`<p>
                 this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.
@@ -43,15 +43,13 @@ app.use(morgan('combined'));
      },
  };
  function createTemplate (data){
-        var title  =data.title;
+        //var title  =data.title;
         var heading=data.heading;
         var content=data.content;
         var htmlTemplate=`
         <html>
             <head>
-                <title>
-                   ${title}
-                </title>
+               
                 </head>
                 <link href="/ui/style.css" rel="stylesheet" />
            
