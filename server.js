@@ -45,9 +45,9 @@ app.use(morgan('combined'));
      },
  };
  function createTemplate (data){
-        var title  =data.title;
-        var heading=data.heading;
-        var content=data.content;
+        var title  = data.title;
+        var heading =  data.heading;
+        var content = data.content;
         var htmlTemplate=`
         <html>
             <head>
@@ -84,7 +84,7 @@ app.get('/', function (req, res) {
 app.get('/:articleName',function(req,res){
  
 var articleName=req.params.articlename;
-res.send(createTemplate(articles[articleName]));
+res.send(createTemplate(article));
 });
 
 
