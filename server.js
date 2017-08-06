@@ -8,8 +8,8 @@ app.use(morgan('combined'));
 
  var content={
      'article':{
-     title:`article`,
-     heading:`article one`,
+     title:'article',
+     heading:'article one',
      content:`<p>
                 this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.
             </p>
@@ -20,8 +20,8 @@ app.use(morgan('combined'));
             </p>`
  },
      'a2':{
-         title:`article2`,
-     heading:`article two`,
+         title:'article2',
+     heading:'article two',
      content:`<p>
                 this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.
             </p>
@@ -32,8 +32,8 @@ app.use(morgan('combined'));
             </p>`
      },
      'a3':{ 
-         title:`article3`,
-         heading:`article three`,
+         title:'article3',
+         heading:'article three',
          content:`<p>
                 this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.this my article.
             </p>
