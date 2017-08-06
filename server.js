@@ -51,17 +51,21 @@ app.use(morgan('combined'));
         var htmlTemplate=`
         <html>
             <head>
+            <title>
+                ${title}
+                </title>
                
                 </head>
                 <link href="/ui/style.css" rel="stylesheet" />
            
                     
             <body>
+                
+                <a href="/">home</a>
+                <hr>
                 <h4>
                    ${heading}
                </h4>
-                <a href="/">home</a>
-                <hr>
                 <div class="container">
                     <div>            
                     ${content}
