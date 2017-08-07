@@ -1,7 +1,21 @@
 var button=document.getElementById("counter");
-var counter=0;
+
 button.onclick=function(){
-  counter=counter+1;
-  var span=document.getElementById("count");
-  span.innerHTML=counter.toString();
+    //create a request
+     var request=XMLHttpResquest();
+     request.onreadystatechange= function()
+     {
+         if(request.readystate===XMLHttpRequest)
+         {
+             if(request.status===200)
+             {
+                 var counter=Request.responseText;
+                 var span=document.getelementById("count");
+                 span.innerHTML=counter.toString();
+             }
+             //not
+         }
+     };
+     request.open('GET','http://nandhaspmkumar.imad.hasura-app.io/counter',true);
+     request.send(null);
 };
