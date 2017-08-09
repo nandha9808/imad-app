@@ -4,9 +4,8 @@ var counter=0;
 button.onclick=function(){
   
             var request=new XMLHttpRequest();
-            request.onreadystatechange=fuction()
-            {
-            if(request.readystate===XMLHttp.DONE)
+            request.onreadystatechange=fuction(){
+            if(request.readystate===XMLHttpRequest.DONE)
             {
                  if(request.status===200)
                  {
